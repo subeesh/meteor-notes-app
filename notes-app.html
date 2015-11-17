@@ -1,5 +1,7 @@
 <head>
   <title>Notes</title>
+
+  
 </head>
  
 <body>
@@ -7,6 +9,10 @@
     <header>
       <h1>Notes</h1>
     </header>
+
+    <form class="new-note">
+        <input type="text" name="text" placeholder="Type to add new notes" />
+   </form>
  
     <ul>
       {{#each notes}}
@@ -14,6 +20,7 @@
       {{/each}}
     </ul>
   </div>
+
 </body>
  
 <template name="note">
