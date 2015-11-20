@@ -4,7 +4,11 @@ if (Meteor.isClient) {
   // This code only runs on the client
   Template.body.helpers({
     notes: function () {
-      return Notes.find({}, {sort: {createdAt: -1}});
+      if(Session.get("searchKey")) {
+        return Notes.find({  text: { $regex: Session.get("searchKey") } }, {sort: {createdAt: -1}});;
+      } else {
+        return Notes.find({}, {sort: {createdAt: -1}});
+      }
     }
   });
 
@@ -25,6 +29,9 @@ if (Meteor.isClient) {
  
       // Clear form
       event.target.text.value = "";
+    },
+    "input .search-notes": function(e) {
+      Session.set("searchKey", e.currentTarget.value)
     }
   });
 

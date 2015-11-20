@@ -1,7 +1,7 @@
 /* CSS declarations go here */
 body {
   font-family: sans-serif;
-  background-color: #315481;
+  background-color: #FF0000;
   background-image: linear-gradient(to bottom, #315481, #918e82 100%);
   background-attachment: fixed;
 
@@ -90,7 +90,7 @@ li .text {
 }
 
 li.checked {
-  color: #888;
+  color: #bbbbbb;
 }
 
 li.checked .text {
@@ -123,4 +123,10 @@ header .hide-completed {
   .new-note input {
     padding-bottom: 5px;
   }
+}
+
+.search-notes {
+  float: right;
+  min-height: 28px;
+  min-width: 300px;
 }
